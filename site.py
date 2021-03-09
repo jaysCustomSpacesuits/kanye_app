@@ -1,5 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
-import sqlite3
+from flask import Flask, render_template
 import requests
 from jinja2 import Template
 import json
@@ -12,7 +11,6 @@ app = Flask(__name__)
 @app.route('/kanye')
 def kanyeroute():
     quote = requests.get('https://api.kanye.rest').json()
-    json_quote = quote
     kanye_quote = quote['quote']
     author = '- Kanye West'
     return render_template('kanye.html', final_quote = kanye_quote, who = author)

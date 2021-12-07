@@ -7,7 +7,6 @@ import json
 app = Flask(__name__)
 
 # route for kanye quote page
-
 @app.route('/kanye')
 def kanyeroute():
     quote = requests.get('https://api.kanye.rest').json()
